@@ -30,7 +30,7 @@ ERROR_MESSAGE = "**- أُووبـس! هنالك خطـأ!** \n\n**الخطـأ �
 @Client.on_message(filters.private & ~filters.forwarded & filters.command('generate'))
 async def main(_, msg):
     await msg.reply(
-        "**- اختـر تليثـون لاستخـراج كـود تيرمكـس زدثــون**",
+        "**- اختـر تليثـون لاستخـراج كـود تيرمكـس ريبثون **",
         reply_markup=InlineKeyboardMarkup([[
             InlineKeyboardButton("بايـروجـرام", callback_data="pyrogram"),
             InlineKeyboardButton("تليثــون", callback_data="telethon")
