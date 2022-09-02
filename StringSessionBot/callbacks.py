@@ -43,7 +43,7 @@ async def _callbacks(bot: Client, callback_query: CallbackQuery):
         )
     elif query == "generate":
         await callback_query.message.reply(
-            "**- اختـر تليثـون لاستخـراج كـود تيرمكـس زدثــون**",
+            "**- اختـر تليثـون لاستخـراج كـود تيرمكـس ريبثون **",
             reply_markup=InlineKeyboardMarkup([[
                 InlineKeyboardButton("بايروجـرام", callback_data="pyrogram"),
                 InlineKeyboardButton("تليثــون", callback_data="telethon")
