@@ -37,16 +37,16 @@ async def _callbacks(bot: Client, callback_query: CallbackQuery):
         await bot.edit_message_text(
             chat_id=chat_id,
             message_id=message_id,
-            text="**- كيفيـة استخـدام البــوت**\n" + Data.HELP,
+            text="**- ڪـيـفـيـة اسـتـخـدام البــوت**\n" + Data.HELP,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(Data.home_buttons),
         )
     elif query == "generate":
         await callback_query.message.reply(
-            "**- اختـر تليثـون لاستخـراج كـود تيرمكـس ريبثون **",
+            "**- اخـتـر تـليثـون لاسـتـخـراج كـود تـيـرمڪـس سـيـمـو **",
             reply_markup=InlineKeyboardMarkup([[
-                InlineKeyboardButton("بايروجـرام", callback_data="pyrogram"),
-                InlineKeyboardButton("تليثــون", callback_data="telethon")
+                InlineKeyboardButton("بايـروجـرام", callback_data="pyrogram"),
+                InlineKeyboardButton("تـليثــون", callback_data="telethon")
             ]])
         )
     elif query in ["pyrogram", "telethon"]:
