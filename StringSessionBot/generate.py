@@ -22,7 +22,7 @@ from telethon.errors import (
 )
 
 ERROR_MESSAGE = "**- أُووبـس! هنالك خطـأ!** \n\n**الخطـأ هـو -** : {} " \
-            "\n\n**- الرجاء التواصل @ZQ_LO واعلامه بالخطـأ** " \
+            "\n\n**- الرجاء التواصل @DEV_SAMIR واعلامه بالخطـأ** " \
             "**- إذا كنت تريد الإبلاغ عن هذا كـ**" \
             "**- لم يتم تسجيل رسالة الخطأ هذه بواسطتنا!**"
 
@@ -30,10 +30,10 @@ ERROR_MESSAGE = "**- أُووبـس! هنالك خطـأ!** \n\n**الخطـأ �
 @Client.on_message(filters.private & ~filters.forwarded & filters.command('generate'))
 async def main(_, msg):
     await msg.reply(
-        "**- اختـر تليثـون لاستخـراج كـود تيرمكـس ريبثون **",
+        "**- اخـتـر تـلـيـثـون لاسـتـخـراج كـود تـيـرمـڪـس سـيـمـو **",
         reply_markup=InlineKeyboardMarkup([[
             InlineKeyboardButton("بايـروجـرام", callback_data="pyrogram"),
-            InlineKeyboardButton("تليثــون", callback_data="telethon")
+            InlineKeyboardButton("تـليثــون", callback_data="telethon")
         ]])
     )
 
@@ -57,7 +57,7 @@ async def generate_session(bot, msg, telethon=False):
     if await cancelled(api_id_msg):
         return
     phone_number = phone_number_msg.text
-    await msg.reply("**بـدء استخـراج الجلسـه 𝐑𝐄𝐏𝐓𝐇𝐎𝐍 ⌬....**")
+    await msg.reply("** بـدء استخـراج الجلسـهہ **")
     if telethon:
         client = TelegramClient(StringSession(), api_id, api_hash)
     else:
@@ -114,10 +114,10 @@ async def generate_session(bot, msg, telethon=False):
         string_session = client.session.save()
     else:
         string_session = await client.export_session_string()
-    text = "**- كـود تيرمكـس {} 𝐑𝐄𝐏𝐓𝐇𝐎𝐍** \n\n{} \n\n**- تم الاستخـراج بواسطـة** @Repthon\n**- تحياتـي ..  روجر** @ZQ_LO ".format("تليثـون" if telethon else "بايروجـرام", string_session)
+    text = "**- كـود تيرمكـس {} 𝐒 𝐄 𝐌 𝐎** \n\n{} \n\n**- تم الاستخـراج بواسطـة** @DEV_SAMIR\n**- تحياتـي ..  روجر** @DEV_SAMIR ".format("تليثـون" if telethon else "بايروجـرام", string_session)
     await client.send_message("me", text)
     await client.disconnect()
-    await phone_code_msg.reply("**- تم إنشاء جلسة تيرمكس {} 𝐑𝐄𝐏𝐓𝐇𝐎𝐍 بنجاح ..** \n\n**- يرجى التحقق من حافظـة حسابـك واخذ الكود!**\n\n**- لا تقم بمشاركـة هذا الكود مع احـد ⚠️**\n\n".format("تليثـون" if telethon else "بايروجـرام"))
+    await phone_code_msg.reply("**- تم إنشاء جلسة تيرمكس {}  𝐒 𝐄 𝐌 𝐎 بنجاح ..** \n\n**- يرجى التحقق من حافظـة حسابـك واخذ الكود!**\n\n**- لا تقم بمشاركـة هذا الكود مع احـد ⚠️**\n\n".format("تليثـون" if telethon else "بايروجـرام"))
 
 
 async def cancelled(msg):
